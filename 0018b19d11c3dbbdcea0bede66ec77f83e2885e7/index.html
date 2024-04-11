@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+    <script src="https://quadjr.github.io/aframe-gaussian-splatting/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.2.0/dist/aframe-extras.min.js"></script>
+  </head>
+  <body>
+    <a-scene renderer="antialias: false" stats>
+      <a-entity id="rig"
+          movement-controls="controls: keyboard,gamepad,nipple; speed: 0.4; fly: true"
+          nipple-controls="mode: static; lookJoystickPosition: left; moveJoystickPosition: right">
+        <a-entity camera position="0 1.6 0" look-controls="enabled: true"></a-entity>
+      </a-entity>
+      <a-entity gaussian_splatting="src: https://huggingface.co/NikV09/SplaTAM_S1/resolve/main/3dgs_large_scale.splat;"></a-entity>
+      <a-sky color="#000"></a-sky>
+    </a-scene>
+  </body>
+</html>
